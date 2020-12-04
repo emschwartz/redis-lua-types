@@ -3,6 +3,8 @@ import '../common'
 declare global {
   /** @noSelf */
   namespace redis {
+    // redis.call(...)
+
     // HDEL
     /** @vararg */
     export function call(method: 'HDEL' | 'hdel', key: string, ...fields: string[]): number;
@@ -34,9 +36,47 @@ declare global {
 
     // HMSET
     /** @vararg */
-    export function call(method: 'HMSET' | 'hmset', key: string, ...fieldsvalues: Value[]): OkReply;
+    export function call(method: 'HMSET' | 'hmset', key: string, ...fieldsvalues: Value[]): OkResult;
 
     // HSET
     export function call(method: 'HSET' | 'hset', key: string, field: string, value: Value): number;
+
+    // redis.pcall(...)
+
+    // HDEL
+    /** @vararg */
+    export function pcall(method: 'HDEL' | 'hdel', key: string, ...fields: string[]): number | ErrorResult;
+
+    // HEXISTS
+    export function pcall(method: 'HEXISTS' | 'hexists', key: string, field: string): 0 | 1 | ErrorResult;
+
+    // HGET
+    export function pcall(method: 'HGET' | 'hget', key: string, field: string): string | null | ErrorResult;
+
+    // HGETALL
+    export function pcall(method: 'HGETALL' | 'hgetall', key: string): string[] | ErrorResult;
+
+    // HINCRBY
+    export function pcall(method: 'HINCRBY' | 'hincrby', key: string, field: string, value: number): number | ErrorResult;
+
+    // HINCRBYFLOAT
+    export function pcall(method: 'HINCRBYFLOAT' | 'hincrbyfloat', key: string, field: string, value: number): string | ErrorResult;
+
+    // HKEYS
+    export function pcall(method: 'HKEYS' | 'hkeys', key: string): string[] | ErrorResult;
+
+    // HLEN
+    export function pcall(method: 'HLEN' | 'hlen', key: string): number | ErrorResult;
+
+    // HMGET
+    /** @vararg */
+    export function pcall(method: 'HMGET' | 'hmget', key: string, ...fields: string[]): string[] | ErrorResult;
+
+    // HMSET
+    /** @vararg */
+    export function pcall(method: 'HMSET' | 'hmset', key: string, ...fieldsvalues: Value[]): OkResult | ErrorResult;
+
+    // HSET
+    export function pcall(method: 'HSET' | 'hset', key: string, field: string, value: Value): number | ErrorResult;
   }
 }

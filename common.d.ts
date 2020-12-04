@@ -3,4 +3,5 @@ type Value = string
   | boolean
   | null
 
-type OkReply = 'OK'
+type OkResult = 'OK'
+type ErrorResult = { error: string }
