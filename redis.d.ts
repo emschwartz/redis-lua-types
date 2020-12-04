@@ -3,9 +3,18 @@ import './common'
 import './commands'
 
 declare global {
-  export const KEYS: (string | null)[];
-  export const ARGV: (string | null)[];
+  /**
+   * See [EVAL](https://redis.io/commands/eval)
+   */
+  export const KEYS: string[];
+  /**
+   * See [EVAL](https://redis.io/commands/eval)
+   */
+  export const ARGV: string[];
 
+  // Note that the @noSelf compiler annotation is needed
+  // to ensure that the functions are compiled to Lua
+  // as redis.<method> instead of redis:<method>
   /** @noSelf */
   namespace redis {
     // Note: the `call` function is defined in ./commands
