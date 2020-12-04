@@ -7,86 +7,168 @@ declare global {
   namespace redis {
     // redis.call(...)
 
-    // APPEND
+    /**
+    * APPEND
+    * See [APPEND](https://redis.io/commands/APPEND)
+    */
     export function call(method: 'APPEND' | 'append', key: string, value: Value): Value;
 
-    // DECR
+    /**
+    * DECR
+    * See [DECR](https://redis.io/commands/DECR)
+    */
     export function call(method: 'DECR' | 'decr', key: string): number;
 
-    // DECRBY
+    /**
+    * DECRBY
+    * See [DECRBY](https://redis.io/commands/DECRBY)
+    */
     export function call(method: 'DECRBY' | 'decrby', key: string, value: number): number;
 
-    // GET
+    /**
+    * GET
+    * See [GET](https://redis.io/commands/GET)
+    */
     export function call(method: 'GET' | 'get', key: string): string | null;
 
-    // INCR
+    /**
+    * INCR
+    * See [INCR](https://redis.io/commands/INCR)
+    */
     export function call(method: 'INCR' | 'incr', key: string): number;
 
-    // INCRBY
+    /**
+    * INCRBY
+    * See [INCRBY](https://redis.io/commands/INCRBY)
+    */
     export function call(method: 'INCRBY' | 'incrby', key: string, value: number): number;
 
-    // INCRBYFLOAT
+    /**
+    * INCRBYFLOAT
+    * See [INCRBYFLOAT](https://redis.io/commands/INCRBYFLOAT)
+    */
     export function call(method: 'INCRBYFLOAT' | 'incrbyfloat', key: string, value: number): string;
 
-    // MGET
-    /** @vararg */
+    /**
+    * MGET
+    * See [MGET](https://redis.io/commands/MGET)
+    * @vararg
+    */
     export function call(method: 'MGET' | 'mget', ...keys: string[]): Value[];
 
-    // MSET
-    /** @vararg */
+    /**
+    * MSET
+    * See [MSET](https://redis.io/commands/MSET)
+    * @vararg
+    */
     export function call(method: 'MSET' | 'mset', ...keyvalues: Value[]): Value[];
 
-    // MSETNX
-    /** @vararg */
+    /**
+    * MSETNX
+    * See [MSETNX](https://redis.io/commands/MSETNX)
+    * @vararg
+    */
     export function call(method: 'MSETNX' | 'msetnx', ...keyvalues: Value[]): 0 | 1;
 
-    // SET
+    /**
+    * SET
+    * See [SET](https://redis.io/commands/SET)
+    */
     export function call(method: 'SET' | 'set', key: string, val: Value): OkResult;
-    /** @vararg */
+    /**
+    * SET
+    * See [SET](https://redis.io/commands/SET)
+    * @vararg
+    */
     export function call(method: 'SET' | 'set', key: string, val: Value, ...options: SetOption[]): OkResult;
-    /** @vararg */
+    /**
+    * SET
+    * See [SET](https://redis.io/commands/SET)
+    * @vararg
+    */
     export function call(method: 'SET' | 'set', key: string, val: Value, ...options: (SetOption | 'GET' | 'get')[]): OkResult | string | null;
 
     // redis.pcall(...)
 
-    // APPEND
+    /**
+    * APPEND
+    * See [APPEND](https://redis.io/commands/APPEND)
+    */
     export function pcall(method: 'APPEND' | 'append', key: string, value: Value): Value | ErrorResult;
 
-    // DECR
+    /**
+    * DECR
+    * See [DECR](https://redis.io/commands/DECR)
+    */
     export function pcall(method: 'DECR' | 'decr', key: string): number | ErrorResult;
 
-    // DECRBY
+    /**
+    * DECRBY
+    * See [DECRBY](https://redis.io/commands/DECRBY)
+    */
     export function pcall(method: 'DECRBY' | 'decrby', key: string, value: number): number | ErrorResult;
 
-    // GET
+    /**
+    * GET
+    * See [GET](https://redis.io/commands/GET)
+    */
     export function pcall(method: 'GET' | 'get', key: string): string | null | ErrorResult;
 
-    // INCR
+    /**
+    * INCR
+    * See [INCR](https://redis.io/commands/INCR)
+    */
     export function pcall(method: 'INCR' | 'incr', key: string): number | ErrorResult;
 
-    // INCRBY
+    /**
+    * INCRBY
+    * See [INCRBY](https://redis.io/commands/INCRBY)
+    */
     export function pcall(method: 'INCRBY' | 'incrby', key: string, value: number): number | ErrorResult;
 
-    // INCRBYFLOAT
+    /**
+    * INCRBYFLOAT
+    * See [INCRBYFLOAT](https://redis.io/commands/INCRBYFLOAT)
+    */
     export function pcall(method: 'INCRBYFLOAT' | 'incrbyfloat', key: string, value: number): string | ErrorResult;
 
-    // MGET
-    /** @vararg */
+    /**
+    * MGET
+    * See [MGET](https://redis.io/commands/MGET)
+    * @vararg
+    */
     export function pcall(method: 'MGET' | 'mget', ...keys: string[]): Value[] | ErrorResult;
 
-    // MSET
-    /** @vararg */
+    /**
+    * MSET
+    * See [MSET](https://redis.io/commands/MSET)
+    * @vararg
+    */
     export function pcall(method: 'MSET' | 'mset', ...keyvalues: Value[]): Value[] | ErrorResult;
 
-    // MSETNX
-    /** @vararg */
+    /**
+    * MSETNX
+    * See [MSETNX](https://redis.io/commands/MSETNX)
+    * @vararg
+    */
     export function pcall(method: 'MSETNX' | 'msetnx', ...keyvalues: Value[]): 0 | 1 | ErrorResult;
 
-    // SET
+    /**
+    * SET
+    * See [SET](https://redis.io/commands/SET)
+    */
     export function pcall(method: 'SET' | 'set', key: string, val: Value): OkResult | ErrorResult;
-    /** @vararg */
+    /**
+    * SET
+    * See [SET](https://redis.io/commands/SET)
+    * @vararg
+    */
     export function pcall(method: 'SET' | 'set', key: string, val: Value, ...options: SetOption[]): OkResult | ErrorResult;
-    /** @vararg */
+    /**
+    * SET
+    * See [SET](https://redis.io/commands/SET)
+    * @vararg
+    */
     export function pcall(method: 'SET' | 'set', key: string, val: Value, ...options: (SetOption | 'GET' | 'get')[]): OkResult | string | null | ErrorResult;
   }
 }
