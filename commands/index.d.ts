@@ -3,3 +3,7 @@
 import './fallback'
 import './strings'
 import './hashes'
+import './keys'
+import './lists'
+import './sets'
+import './sorted-sets'
