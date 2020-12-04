@@ -20,7 +20,13 @@ declare global {
     // Note: the `call` function is defined in ./commands
 
     // Other commands
+    /**
+     * See [Helper functions to return Redis types](https://redis.io/commands/eval#helper-functions-to-return-redis-types)
+     */
     export function error_reply(error_string: string): void;
+    /**
+     * See [Helper functions to return Redis types](https://redis.io/commands/eval#helper-functions-to-return-redis-types)
+     */
     export function status_reply(status_string: string): void;
   }
 }
