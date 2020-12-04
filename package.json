@@ -6,24 +6,17 @@
     "*.d.ts",
     "**/*.d.ts"
   ],
-  "scripts": {
-    "build": "tstl",
-    "dev": "tstl --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [
     "redis",
     "lua",
     "typescript",
+    "types",
     "TypeScriptToLua"
   ],
   "author": "Evan Schwartz",
   "license": "MIT",
   "dependencies": {
     "lua-types": "^2.8.0"
-  },
-  "devDependencies": {
-    "typescript-to-lua": "^0.36.0"
   },
   "types": "redis.d.ts"
 }
