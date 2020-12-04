@@ -76,7 +76,7 @@ declare global {
     * See [HMSET](https://redis.io/commands/HMSET)
     * @vararg
     */
-    export function call(method: 'HMSET' | 'hmset', key: string, ...fieldsvalues: Value[]): OkResult;
+    export function call(method: 'HMSET' | 'hmset', key: string, ...fieldsAndValues: Value[]): OkResult;
 
     /**
     * HSET
@@ -158,7 +158,7 @@ declare global {
     * See [HMSET](https://redis.io/commands/HMSET)
     * @vararg
     */
-    export function pcall(method: 'HMSET' | 'hmset', key: string, ...fieldsvalues: Value[]): OkResult | ErrorResult;
+    export function pcall(method: 'HMSET' | 'hmset', key: string, ...fieldsAndValues: Value[]): OkResult | ErrorResult;
 
     /**
     * HSET
