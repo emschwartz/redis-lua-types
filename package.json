@@ -1,0 +1,29 @@
+{
+  "name": "redis-lua-types",
+  "version": "0.1.0",
+  "description": "Type definitions for Redis Lua scripts for use with TypeScriptToLua",
+  "files": [
+    "*.d.ts",
+    "**/*.d.ts"
+  ],
+  "scripts": {
+    "build": "tstl",
+    "dev": "tstl --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "redis",
+    "lua",
+    "typescript",
+    "TypeScriptToLua"
+  ],
+  "author": "Evan Schwartz",
+  "license": "MIT",
+  "dependencies": {
+    "lua-types": "^2.8.0"
+  },
+  "devDependencies": {
+    "typescript-to-lua": "^0.36.0"
+  },
+  "types": "redis.d.ts"
+}
