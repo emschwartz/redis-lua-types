@@ -12,12 +12,12 @@ declare global {
    */
   export const ARGV: string[];
 
-  // Note that the @noSelf compiler annotation is needed
+  // Note: the @noSelf compiler annotation is needed
   // to ensure that the functions are compiled to Lua
   // as redis.<method> instead of redis:<method>
   /** @noSelf */
   namespace redis {
-    // Note: the `call` function is defined in ./commands
+    // Note: the `call` and `pcall` functions are defined in ./commands
 
     // Other commands
     /**
